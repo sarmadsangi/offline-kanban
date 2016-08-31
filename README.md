@@ -33,7 +33,9 @@ I will be adding a dragram/details to explain architecture properly. Here is the
 
 1. Make it mobile friendly (components/controls specific to mobile)
 2. Abstract store
-3. Move from Card and List into either parent level container or store
-4. Rename functions/variables to be more readible
-5. Performance optimisations (too many filtering here and there)
+3. Create decorators or contains for drag and drop operations
+4. Improve sorting (it breaks from time to time)
+5. Move from Card and List into either parent level container or store
+6. Rename functions/variables to be more readible
+7. Performance optimisations (too many filtering here and there)
 
