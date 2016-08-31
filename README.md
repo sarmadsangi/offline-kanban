@@ -27,3 +27,13 @@ I will be adding a dragram/details to explain architecture properly. Here is the
 5. Since `PouchDB` in this case is just storing everything locally the whole thing is available offline.
 6. `CSS Modules` to avoid global conflicts and to decipline myself in writing css per component only.
 7. `Travis` is used for CI and app is deployed to heroku automatically after CI passes. Check [![Build Status](https://travis-ci.org/sarmadsangi/offline-kanban.svg?branch=master)](https://travis-ci.org/sarmadsangi/offline-kanban)
+
+
+### TODOS
+
+1. Make it mobile friendly (components/controls specific to mobile)
+2. Abstract store
+3. Move from Card and List into either parent level container or store
+4. Rename functions/variables to be more readible
+5. Performance optimisations (too many filtering here and there)
+
