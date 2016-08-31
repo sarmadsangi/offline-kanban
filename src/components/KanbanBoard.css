@@ -1,0 +1,15 @@
+.board {
+  position: relative;
+  height: calc(100vh - 95px);
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.lists_wrapper {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  padding: 15px;
+}

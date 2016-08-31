@@ -1,0 +1,23 @@
+.footer {
+  padding: 0px 15px;
+  border-top: 1px solid #eee;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer_github {
+  width: 20px;
+  height: 20px;
+  fill: #999;
+}
+
+.footer_link {
+  font-weight: 400;
+  color: #999;
+  padding: 5px;
+  font-size: 13px;
+}

@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- v5.11
+before_script:
+- npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: lQW4HAK1CO/GMrwgmbyfm+FJoM51CFr3whb7CDqRxN8z30RLvxTZYajA12U4OEUG3lAsWSei1f1YscgBvyB59zeE7fhLIR0cAzbDBwK5ip8fokJLCC2atfH/NlnWt/Y6BehWKeAWpQvS1CewZ4fxn9EqL5hFeGzCOIdhn2wudwGp1wVaPpAHPfCxSjAvpVFigWfyUeD8IJVx/lsRYVkcSkQCtJ1gezNYLTpVEJnseX4La1LMscOssPomtSHPyCIt+mK4ZndZGfnfGeE/ibUePomBG+qSIQAaPf769NWzALlI4lClwjZBdc4NkNXjT4Ue0XKSdYbmEdCUIu8al1Y4C/YQNVltCCY+beF+mTAGbcHgl/pupErqw+vkAnCc8X5IYrwSVa2u+WkK3v/naut0pNVlTri7Gdei2GnQXUou86JUnF3l0YtrPyjlhHKL0N0WWJv9poMvbJhEvLdcxqQcqFYFM5XdCH8F4lLFHE3NHEdj979kAM0gteT0XxSMGZJaKJ//KArtqnMNmiC/4fD0xSST0W+GvNdyNhlEHyrcJUrozOGsiUzeLLpInWA/iWQePSdjEVW34DifbTyeRuAyf8ofgFARg8zTModz6iq7Eac/worOo2yVCmkyfQm45QOcM58kDxdXtTDQVwEgX2T/NbHCsyA+P29zgBWusZCMZCA=
+  app: offline-kanban
+  skip_cleanup: true
+  on:
+    repo: sarmadsangi/offline-kanban

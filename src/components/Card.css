@@ -1,0 +1,21 @@
+.card {
+  min-height: 50px;
+  padding-right: 6px;
+  padding-left: 6px;
+  margin-bottom: 1px;
+  background-color: #fff;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 200;
+}
+
+.card:hover {
+  border: 1px solid #85d2ff;
+}

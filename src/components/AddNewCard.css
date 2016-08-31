@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 200;
+  font-size: 15px;
+  color: #ccc;
+  border: 1px dashed #f5f5f5;
+}
+
+.container:hover {
+  background: #f9f9f9;
+  border: 1px dashed #ccc;
+  color: #aaa;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border:1px solid #f5f5f5;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.form_footer {
+  display: flex;
+  width: 100%;
+}
+
+.add_button {
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
