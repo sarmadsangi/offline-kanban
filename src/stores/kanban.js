@@ -27,7 +27,7 @@ const kanban = new class Kanban {
   }
 
   getLists() {
-    return this.lists.toJS();
+    return _.sortBy(this.lists.toJS(), ['pos']);
   }
 
   // generate total number of tasks
@@ -42,9 +42,11 @@ const kanban = new class Kanban {
 
   // assign uniqueId, date etc to each list before add to board
   createNewList(listName) {
+    const newPos = this.lists.length;
     this.lists.push({
       _id: _.uniqueId(listName),
       name: listName,
+      pos: newPos,
       cards: [],
       created_at: Date.now(),
     });
