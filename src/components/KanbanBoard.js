@@ -3,6 +3,7 @@ import styles from './KanbanBoard.css';
 import List from 'components/List';
 import AddNewList from 'components/AddNewList';
 import { observer } from 'mobx-react';
+import Slider from 'react-slick';
 
 @observer
 class KanbanBoard extends Component {
@@ -21,16 +22,48 @@ class KanbanBoard extends Component {
   }
 
   renderLists() {
-    const { lists, createNewCard, moveCardToPreviousList, moveCardToNextList } = this.props;
+    const {
+      lists,
+      createNewCard,
+      moveCardToPreviousList,
+      moveCardToNextList,
+    } = this.props;
+
+    const settings = {
+      dots: false,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 1,
+      nextArrow: '',
+      // swipe: true,
+      prevArrow: '',
+      slidesToScroll: 1,
+      variableWidth: true,
+      className: styles.lists_wrapper,
+    };
+
     const listElements = lists.map(list => (
-      <List
-        list={list}
-        handleAddNewCardToList={(cardName) => createNewCard(cardName, list._id)}
-        moveCardToAnotherList={this.handleMoveCardToAnotherList}
-        moveCardToPreviousList={moveCardToPreviousList}
-        moveCardToNextList={moveCardToNextList}
-      />
+      <div>
+        <List
+          list={list}
+          handleAddNewCardToList={(cardName) => createNewCard(cardName, list._id)}
+          moveCardToAnotherList={this.handleMoveCardToAnotherList}
+          moveCardToPreviousList={moveCardToPreviousList}
+          moveCardToNextList={moveCardToNextList}
+        />
+      </div>
     ));
+
+    if (window.__md.mobile()) {
+      return (
+        <Slider {...settings}>
+          {listElements}
+          <div>
+            <AddNewList handleAddNewList={this.handleCreateNewList} />
+          </div>
+        </Slider>
+      );
+    }
 
     return (
       <div className={styles.lists_wrapper}>

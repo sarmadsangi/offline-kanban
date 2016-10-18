@@ -13,3 +13,11 @@
   left: 0;
   padding: 15px;
 }
+
+:global(.slick-track) {
+  display: flex !important;
+}
+
+:global(.slick-arrow) {
+  display: none !important;
+}
