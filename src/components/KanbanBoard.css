@@ -14,6 +14,15 @@
   padding: 15px;
 }
 
+.slider_wrapper {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
 :global(.slick-track) {
   display: flex !important;
 }

@@ -32,14 +32,14 @@ class KanbanBoard extends Component {
     const settings = {
       dots: false,
       infinite: false,
-      speed: 500,
+      speed: 300,
       slidesToShow: 1,
       nextArrow: '',
-      // swipe: true,
+      swipe: true,
       prevArrow: '',
       slidesToScroll: 1,
       variableWidth: true,
-      className: styles.lists_wrapper,
+      className: styles.slider_wrapper,
     };
 
     const listElements = lists.map(list => (
@@ -54,7 +54,7 @@ class KanbanBoard extends Component {
       </div>
     ));
 
-    if (window.__md.mobile()) {
+    if (window.__md.isPhoneSized()) {
       return (
         <Slider {...settings}>
           {listElements}
