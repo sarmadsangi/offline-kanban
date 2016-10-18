@@ -15,7 +15,7 @@ class List extends Component {
   }
 
   getCards() {
-    const { list } = this.props;
+    const { list, moveCardToPreviousList, moveCardToNextList } = this.props;
     const { cards } = list;
     let cardElements;
     if (cards.length) {
@@ -23,7 +23,14 @@ class List extends Component {
         <Card
           list_id={list._id}
           {...card}
+          isMobileCard={window.__md.mobile()}
           handleDropOnCard={this.handleDropOnCard}
+          moveCardToPreviousList={() => {
+            moveCardToPreviousList(card, list);
+          }}
+          moveCardToNextList={() => {
+            moveCardToNextList(card, list);
+          }}
         />
       ));
     }
@@ -48,8 +55,7 @@ class List extends Component {
   }
 
   handleDropOnCard(card, prevListId, nextListId) {
-    const { moveCardToAnotherList } = this.props;
-    moveCardToAnotherList(card, prevListId, nextListId);
+    this.props.moveCardToAnotherList(card, prevListId, nextListId);
   }
 
   render() {
@@ -61,8 +67,7 @@ class List extends Component {
         <section
           className={styles.list_cards_section}
           onDrop={this.onCardDropIntoEmptyList}
-          onDragOver={this.onDragOver}
-        >
+          onDragOver={this.onDragOver} >
           {this.getCards()}
           <AddNewCard handleAddNewCard={handleAddNewCardToList} />
         </section>

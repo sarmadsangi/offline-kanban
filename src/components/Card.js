@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Card.css';
 import DummyCard from 'components/DummyCard';
+import ArrowIcon from 'components/icons/Arrow';
 import { observer } from 'mobx-react';
 
 export const constants = {
@@ -78,8 +79,17 @@ class Card extends Component {
     })
   }
 
+  renderMobileControls() {
+    return (
+      <div className={styles.controls}>
+        <a onClick={this.props.moveCardToPreviousList} className={styles.goBack}><ArrowIcon /></a>
+        <a onClick={this.props.moveCardToNextList} className={styles.goNext}><ArrowIcon /></a>
+      </div>
+    );
+  }
+
   render() {
-    const { title } = this.props;
+    const { title, isMobileCard } = this.props;
     const { displayDummy } = this.state;
 
     return (
@@ -95,6 +105,7 @@ class Card extends Component {
           onDragEnd={this.handleCardDragEnd}
           className={styles.card} >
           <div>{title}</div>
+          {isMobileCard ? this.renderMobileControls() : null}
         </div>
       </div>
     )

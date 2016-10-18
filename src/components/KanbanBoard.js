@@ -21,12 +21,14 @@ class KanbanBoard extends Component {
   }
 
   renderLists() {
-    const { lists, createNewCard } = this.props;
+    const { lists, createNewCard, moveCardToPreviousList, moveCardToNextList } = this.props;
     const listElements = lists.map(list => (
       <List
         list={list}
         handleAddNewCardToList={(cardName) => createNewCard(cardName, list._id)}
         moveCardToAnotherList={this.handleMoveCardToAnotherList}
+        moveCardToPreviousList={moveCardToPreviousList}
+        moveCardToNextList={moveCardToNextList}
       />
     ));
 

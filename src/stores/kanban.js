@@ -14,6 +14,8 @@ const kanban = new class Kanban {
     this.addCardToList = this.addCardToList.bind(this);
     this.removeCardFromList = this.removeCardFromList.bind(this);
     this.moveCardToAnotherList = this.moveCardToAnotherList.bind(this);
+    this.moveCardToNextList = this.moveCardToNextList.bind(this);
+    this.moveCardToPreviousList = this.moveCardToPreviousList.bind(this);
     this.loading = true;
 
     // Get all board lists from pouchdb
@@ -138,6 +140,22 @@ const kanban = new class Kanban {
   // set cards for specified list
   setListCards(listId, cards) {
     this.lists.filter(list => list._id === listId)[0].cards = cards;
+  }
+
+  moveCardToNextList(card, currentList) {
+    const sortedLists = this.getLists();
+    const nextList = _.find(sortedLists, { pos: currentList.pos + 1 });
+    if (nextList) {
+      this.moveCardToAnotherList(card, currentList._id, nextList._id);
+    }
+  }
+
+  moveCardToPreviousList(card, currentList) {
+    const sortedLists = this.getLists();
+    const previousList =  _.find(sortedLists, { pos: currentList.pos - 1 });
+    if (previousList) {
+      this.moveCardToAnotherList(card, currentList._id, previousList._id);
+    }
   }
 }();
 

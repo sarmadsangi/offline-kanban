@@ -39,6 +39,8 @@ class App extends Component {
           createNewList={KanbanStore.createNewList}
           createNewCard={KanbanStore.createNewCard}
           moveCardToAnotherList={KanbanStore.moveCardToAnotherList}
+          moveCardToPreviousList={KanbanStore.moveCardToPreviousList}
+          moveCardToNextList={KanbanStore.moveCardToNextList}
         />
         <Footer />
       </div>

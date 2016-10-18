@@ -19,3 +19,17 @@
 .card:hover {
   border: 1px solid #85d2ff;
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.goBack, .goNext {
+  padding: 5px 10px;
+}
+
+.goBack > svg {
+  transform: rotate(180deg);
+}
