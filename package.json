@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "main": "index.js",
+  "homepage": "https://sarmadsangi.github.io/offline-kanban",
   "devDependencies": {
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
